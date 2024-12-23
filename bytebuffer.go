@@ -17,6 +17,11 @@ func (b *ByteBuffer) Write(p []byte) (int, error) {
 	return bb(b).Write(p)
 }
 
+// WriteString implements io.StringWriter.
+func (b *ByteBuffer) WriteString(s string) (n int, err error) {
+	return bb(b).WriteString(s)
+}
+
 // Reset resets the byte buffer.
 func (b *ByteBuffer) Reset() {
 	bb(b).Reset()
